@@ -33,7 +33,7 @@ class DuneCommon < Formula
  # end
 
   def install
-  #  ENV.fortran
+    ENV.fortran
 
     # if we are NOT built with c++11, make sure we don't link to a boost that is
  #   if (not build.with? 'c++11') and Tab.for_formula('boost').with?('c++11') then
