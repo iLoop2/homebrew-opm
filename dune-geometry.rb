@@ -1,7 +1,7 @@
 # This file is licensed under the GNU General Public License v3.0
 require 'formula'
 
-class DuneCommon < Formula
+class DuneGeometry < Formula
   homepage 'http://www.dune-project.org/'
   url 'http://www.dune-project.org/download/2.3.1/dune-geometry-2.3.1.tar.gz'
   sha1 '1928ee494f3fc05f32868723e336184598a600a8'
