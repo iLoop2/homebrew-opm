@@ -23,14 +23,14 @@ class DuneCommon < Formula
   # if we are built with c++11, make sure we link to a boost that is
   depends_on 'boost' => ('--with-c++11' if build.with? 'c++11')
 
-  def patches
+ # def patches
 	# am is a directory that is linked not a file; this bug seems to only be
 	# triggered when we are building in a temporary and refering to the Cellar
-    system 'sed', '-i', '', 's/rm -f am/rm -rf am/g', 'bin/dune-autogen'
+  #  system 'sed', '-i', '', 's/rm -f am/rm -rf am/g', 'bin/dune-autogen'
 
     # this cause a compiler warning in our client code
-    system 'sed', '-i', '', 's/friend struct std::numeric_limits/friend class std::numeric_limits/', 'dune/common/bigunsignedint.hh'
-  end
+ #   system 'sed', '-i', '', 's/friend struct std::numeric_limits/friend class std::numeric_limits/', 'dune/common/bigunsignedint.hh'
+ # end
 
   def install
     ENV.fortran
