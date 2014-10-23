@@ -49,7 +49,7 @@ class DuneCommon < Formula
     modul = name.to_s.split('-')[1]
 
     # upgrade from pre-release -std=c++0x to official -std=c++11
-    system 'sed', '-i', '', 's/-std=c++0x/-std=c++11/g', 'm4/cxx0x_compiler.m4'
+    #system 'sed', '-i', '', 's/-std=c++0x/-std=c++11/g', 'm4/cxx0x_compiler.m4'
 
     # add version number to the generated library
     File::open("lib/Makefile.am", 'a') do |f|
@@ -62,16 +62,16 @@ class DuneCommon < Formula
 	ENV.append 'DUNE_CONTROL_PATH', "#{HOMEBREW_PREFIX}"
 
     # generate configuration files (since we modified build-system)
-    system 'touch', 'stamp-vc'
-	system 'bin/dunecontrol', '--current', 'autogen'
+    #system 'touch', 'stamp-vc'
+#	system 'bin/dunecontrol', '--current', 'autogen'
 
     # remove the misguided idea that the major number should always be increased
     # to avoid having zero in that position
-    system 'sed', '-i', '.bak', '/func_arith \$current + 1/d', 'ltmain.sh'
+#    system 'sed', '-i', '.bak', '/func_arith \$current + 1/d', 'ltmain.sh'
 
     # add minor version to compatibility_version to make it only compatible with itself
-    system 'sed', '-i', '.bak',
-      's/\(-compatibility_version\ \(\${wl}\)*\$minor_current\)/\1\.\$revision/', 'ltmain.sh'
+#    system 'sed', '-i', '.bak',
+#      's/\(-compatibility_version\ \(\${wl}\)*\$minor_current\)/\1\.\$revision/', 'ltmain.sh'
 
     # there is a test which includes stdlib.h, which apparently needs
     # this define if we are using clang
@@ -94,8 +94,8 @@ class DuneCommon < Formula
 	  args << "--disable-gxx0xcheck"
     end
   
-    system 'bin/dunecontrol', "--configure-opts=#{args.join(' ')}", '--current', 'configure'
-
+    #system 'bin/dunecontrol', "--configure-opts=#{args.join(' ')}", '--current', 'configure'
+    system "./configure" "--prefix=#{prefix}"
     # compile and copy target files to their final location
     system 'make', 'install'
 
