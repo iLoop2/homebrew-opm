@@ -4,8 +4,9 @@ require 'formula'
 class Alugrid < Formula
   homepage 'http://aam.mathematik.uni-freiburg.de/IAM/Research/alugrid/'
   url 'http://aam.mathematik.uni-freiburg.de/IAM/Research/alugrid/ALUGrid-1.52.tar.gz'
-  sha1 '3e5da3f5b88ea61dcd31f952f9dde135af634c62'
-
+  # sha1 '3e5da3f5b88ea61dcd31f952f9dde135af634c62'
+  sha1 '7f1b0e888ad68968ff7de23f37c0096e966ae2ee'
+  
   depends_on 'autoconf' => :build
   depends_on 'automake' => :build
   depends_on 'libtool' => :build
