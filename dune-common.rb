@@ -3,8 +3,8 @@ require 'formula'
 
 class DuneCommon < Formula
   homepage 'http://www.dune-project.org/'
-  url 'http://www.dune-project.org/download/2.2.1/dune-common-2.2.1.tar.gz'
-  sha1 '9a9888924daf029e48b01b174adeb1472daa827b'
+  url 'http://www.dune-project.org/download/2.3.1/dune-common-2.3.1.tar.gz'
+  sha1 '4db20057131f97ce23354dbf11c8138f784aa5f5'
 
   depends_on 'autoconf'  => :build
   depends_on 'automake'  => :build
