@@ -11,7 +11,7 @@ class DuneGrid < Formula
   depends_on 'libtool'   => :build
   depends_on 'pkgconfig' => :build
   
-  depends_on 'dune-geometry'
+  
   
 
   # if we are built with c++11, make sure we link to a boost that is
