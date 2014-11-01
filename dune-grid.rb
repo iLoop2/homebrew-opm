@@ -23,7 +23,7 @@ class DuneGrid < Formula
     ENV.fortran
 
  
-    system "./configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
     # compile and copy target files to their final location
     system 'make', 'install'
 
