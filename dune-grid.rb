@@ -10,6 +10,7 @@ class DuneGrid < Formula
   depends_on 'automake'  => :build
   depends_on 'libtool'   => :build
   depends_on 'pkgconfig' => :build
+  depends_on 'dune-geometry' => :build
   
   
   
